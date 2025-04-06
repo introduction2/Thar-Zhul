@@ -32,7 +32,12 @@ body {
   padding: 2rem;
   background-color: #f5f5f5;
   overflow-y: auto;
+  
 }
 .highlight {
   color: #3498db; /* Nastav modrou barvu */
+}
+
+p {
+  margin-bottom: 1.5rem; /* Nastaví mezeru pod každý odstavec */
 }
