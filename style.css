@@ -5,12 +5,19 @@
 }
 
 body {
-  display: flex;
-  height: 100vh;
   font-family: 'MedievalSharp', cursive;
-;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+/* Levá a pravá část rozdělená na půlku pro desktop */
 .left, .right {
   width: 50%;
   height: 100vh;
@@ -32,12 +39,39 @@ body {
   padding: 2rem;
   background-color: #f5f5f5;
   overflow-y: auto;
-  
 }
+
 .highlight {
-  color: #3498db; /* Nastav modrou barvu */
+  color: #3498db;
 }
 
 p {
-  margin-bottom: 2rem; /* Nastaví mezeru pod každý odstavec */
+  margin-bottom: 2rem;
+}
+
+/* --- MEDIA QUERY pro mobilní zařízení --- */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left, .right {
+    width: 100%;
+    height: auto;
+  }
+
+  .left img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .right {
+    padding: 1rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
 }
