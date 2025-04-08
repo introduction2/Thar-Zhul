@@ -7,61 +7,70 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="intro">
-  <video src="https://github.com/introduction2/Thar-Zhul/raw/refs/heads/main/Animace%20-%20uvod%20postav.mp4" autoplay muted playsinline></video>
-</div>
-    <div class="container">
-    <div class="container hidden">
+
+  <!-- Tlačítko pro vstup -->
+  <div class="entry-screen">
+    <button id="enterBtn">VSTUP</button>
+  </div>
+
+  <!-- Úvodní animace -->
+  <div class="intro hidden">
+    <video id="introVideo" src="https://github.com/introduction2/Thar-Zhul/raw/refs/heads/main/Animace%20-%20uvod%20postav.mp4" autoplay playsinline></video>
+  </div>
+
+  <!-- Hlavní obsah -->
+  <div class="container hidden">
     <div class="left">
       <img src="nDRlTTUyll7Q0DKANmFw--0--fm6xa.jpeg" alt="Postava">
     </div>
     <div class="right">
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
+      <!-- Hvězdy -->
+      <div class="stars">
+        <!-- Vygeneruj klidně víc dle potřeby -->
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
 
       <h1><p>Thar’Zhul</p></h1>
       <p>Mistrovský Kovář Planety Zor’Kar</p>
 
       <p><strong>LORE</strong></p>
-      <p>Thar’Zhul je legendární kovář z planety Zor’Kar, jehož jméno je vyryto v runách nejmocnějších zbraní. Po staletí tvaroval mystický Titanit, kov pevnější než jakákoli známá látka, a dodával bojovníkům nástroje schopné prorazit i dimenzionální bariéry. Ve své kovárně hluboko v jeskyních temného pohoří ukovával Meče osudu, které předurčují vítěze bitev ještě předtím, než jsou svedeny.</p>
-      <p>Není jen řemeslníkem – Thar’Zhul je strážcem rovnováhy. Své výtvory poskytne jen těm, kdo prokáží sílu ducha a čistotu úmyslu. Ti, kdo se pokusili ukrást jeho zbraně, se proměnili v sochy z popela, odsouzené na věčnost strážit jeho dílnu.</p>
+      <p>Thar’Zhul je legendární kovář z planety Zor’Kar, jehož jméno je vyryto v runách nejmocnějších zbraní...</p>
+      <p>Není jen řemeslníkem – Thar’Zhul je strážcem rovnováhy...</p>
 
       <h2>Schopnosti</h2>
-      <p><span class="highlight">Plamen Zor’Kar (Síla 9/10)</span> – Dokáže rozpálit jakýkoli kov na bod, kdy se mění jeho vlastnosti. S jeho ohněm lze ukovat i zbraně schopné řezat realitu.</p>
-      <p><span class="highlight">Runový Kladivořez (Odolnost 10/10)</span> – Jeho magické kladivo, vyleptané pradávnými runami, dokáže nejen tvarovat kov, ale i ničit zaklínadla a rozbíjet magické bariéry.</p>
-      <p><span class="highlight">Ukovač Duší (Moudrost 8/10)</span> – Schopnost vkládat esenci válečníků do zbraní, což jim dává vlastní vědomí a sílu.</p>
-      <p><span class="highlight">Nezničitelná Kůže (Obrana 7/10)</span> – Díky neustálému vystavení extrémním teplotám se jeho kůže stala tvrdou jako kámen, schopnou odolat i přímým úderům energetických zbraní.</p>
+      <p><span class="highlight">Plamen Zor’Kar (Síla 9/10)</span> – Dokáže rozpálit jakýkoli kov...</p>
+      <p><span class="highlight">Runový Kladivořez (Odolnost 10/10)</span> – Jeho magické kladivo...</p>
+      <p><span class="highlight">Ukovač Duší (Moudrost 8/10)</span> – Schopnost vkládat esenci válečníků...</p>
+      <p><span class="highlight">Nezničitelná Kůže (Obrana 7/10)</span> – Jeho kůže se stala tvrdou jako kámen...</p>
       <p><span class="highlight">Vize Kovárny (Vhled 6/10)</span> – Vidí slabiny ve zbraních i v brnění protivníků.</p>
 
       <h2>Zvláštnosti</h2>
-      <p>Nosí rune-inscribed zástěru, která mu dává odolnost vůči magii.</p>
-      <p>Nepodává si ruku, protože jeho dotek zanechává stopy ohně.</p>
-      <p>Jeho kladivo má vlastní vědomí a občas odmítne poslouchat slabší bytosti.</p>
+      <p>Nosí rune-inscribed zástěru...</p>
+      <p>Nepodává si ruku...</p>
+      <p>Jeho kladivo má vlastní vědomí...</p>
     </div>
-    
+  </div>
+
   <script>
-  setTimeout(() => {
-    document.querySelector('.container').classList.remove('hidden');
-  }, 3100);
-</script>
+    const enterBtn = document.getElementById('enterBtn');
+    const entryScreen = document.querySelector('.entry-screen');
+    const intro = document.querySelector('.intro');
+    const container = document.querySelector('.container');
+    const video = document.getElementById('introVideo');
+
+    enterBtn.addEventListener('click', () => {
+      entryScreen.style.display = 'none';
+      intro.classList.remove('hidden');
+      video.muted = false;
+      video.play();
+
+      setTimeout(() => {
+        intro.classList.add('hidden');
+        container.classList.remove('hidden');
+      }, 3000);
+    });
+  </script>
 
 </body>
 </html>
