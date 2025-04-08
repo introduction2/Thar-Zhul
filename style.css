@@ -1,94 +1,161 @@
-DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Postava a LORE</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Overlay s tlačítkem VSTUP -->
-  <div class="overlay" id="overlay">
-    <button id="enterBtn">VSTUP</button>
-  </div>
+body {
+  font-family: 'Spectral', serif;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #000 0%, #111 100%);
+  overflow: hidden;
+  color: white;
+}
 
-  <!-- Intro video -->
-  <div class="intro" id="intro">
-    <video id="introVideo" src="https://github.com/introduction2/Thar-Zhul/raw/refs/heads/main/Animace%20-%20uvod%20postav.mp4" playsinline></video>
-  </div>
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
 
-  <!-- Hlavní obsah stránky -->
-  <div class="container hidden" id="mainContent">
-    <div class="left">
-      <img src="nDRlTTUyll7Q0DKANmFw--0--fm6xa.jpeg" alt="Postava" />
-    </div>
-    <div class="right">
-    <div class="right">
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
+.left, .right {
+  width: 50%;
+  height: 100vh;
+}
 
-      <h1><p>Thar’Zhul</p></h1>
-      <p>Mistrovský Kovář Planety Zor’Kar</p>
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+}
 
-      <p><strong>LORE</strong></p>
-      <p>Thar’Zhul je legendární kovář z planety Zor’Kar, jehož jméno je vyryto v runách nejmocnějších zbraní. Po staletí tvaroval mystický Titanit, kov pevnější než jakákoli známá látka, a dodával bojovníkům nástroje schopné prorazit i dimenzionální bariéry. Ve své kovárně hluboko v jeskyních temného pohoří ukovával Meče osudu, které předurčují vítěze bitev ještě předtím, než jsou svedeny.</p>
-      <p>Není jen řemeslníkem – Thar’Zhul je strážcem rovnováhy. Své výtvory poskytne jen těm, kdo prokáží sílu ducha a čistotu úmyslu. Ti, kdo se pokusili ukrást jeho zbraně, se proměnili v sochy z popela, odsouzené na věčnost strážit jeho dílnu.</p>
+.left img {
+  max-width: 90%;
+  max-height: 90%;
+}
 
-      <h2>Schopnosti</h2>
-      <p><span class="highlight">Plamen Zor’Kar (Síla 9/10)</span> – Dokáže rozpálit jakýkoli kov na bod, kdy se mění jeho vlastnosti. S jeho ohněm lze ukovat i zbraně schopné řezat realitu.</p>
-      <p><span class="highlight">Runový Kladivořez (Odolnost 10/10)</span> – Jeho magické kladivo, vyleptané pradávnými runami, dokáže nejen tvarovat kov, ale i ničit zaklínadla a rozbíjet magické bariéry.</p>
-      <p><span class="highlight">Ukovač Duší (Moudrost 8/10)</span> – Schopnost vkládat esenci válečníků do zbraní, což jim dává vlastní vědomí a sílu.</p>
-      <p><span class="highlight">Nezničitelná Kůže (Obrana 7/10)</span> – Díky neustálému vystavení extrémním teplotám se jeho kůže stala tvrdou jako kámen, schopnou odolat i přímým úderům energetických zbraní.</p>
-      <p><span class="highlight">Vize Kovárny (Vhled 6/10)</span> – Vidí slabiny ve zbraních i v brnění protivníků.</p>
+.right {
+  position: relative;
+  padding: 2rem;
+  background: transparent;
+  overflow-y: auto;
+}
 
-      <h2>Zvláštnosti</h2>
-      <p>Nosí rune-inscribed zástěru, která mu dává odolnost vůči magii.</p>
-      <p>Nepodává si ruku, protože jeho dotek zanechává stopy ohně.</p>
-      <p>Jeho kladivo má vlastní vědomí a občas odmítne poslouchat slabší bytosti.</p>
-    </div>
-  </div>
-  
-    <script>
-    const enterBtn = document.getElementById("enterBtn");
-    const overlay = document.getElementById("overlay");
-    const intro = document.getElementById("intro");
-    const video = document.getElementById("introVideo");
-    const mainContent = document.getElementById("mainContent");
+h1, h2 {
+  color: #fff;
+}
 
-    enterBtn.addEventListener("click", () => {
-      overlay.style.display = "none";
-      intro.style.display = "block";
-      video.muted = false; // povolíme zvuk
-      video.play();
+.highlight {
+  color: #3cb9fc;
+}
 
-      setTimeout(() => {
-        intro.classList.add("fade-out");
-        setTimeout(() => {
-          intro.style.display = "none";
-          mainContent.classList.remove("hidden");
-        }, 1000);
-      }, 3000);
-    });
-  </script>
-  
-</body>
-</html>
+p {
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Overlay s tlačítkem */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#enterBtn {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  background: #3498db;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #3498db;
+  transition: 0.3s;
+}
+#enterBtn:hover {
+  background: #2980b9;
+}
+
+/* Intro video */
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  display: none;
+  z-index: 999;
+}
+.intro video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.intro.fade-out {
+  animation: fadeOut 1s forwards;
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Hvězdy */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  animation: blink 2s infinite ease-in-out;
+  opacity: 0.8;
+}
+.star:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.star:nth-child(2) { top: 50%; left: 20%; animation-delay: 1s; }
+.star:nth-child(3) { top: 30%; left: 70%; animation-delay: 2s; }
+.star:nth-child(4) { top: 80%; left: 50%; animation-delay: 3s; }
+.star:nth-child(5) { top: 60%; left: 80%; animation-delay: 4s; }
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Responsivní úpravy */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left, .right {
+    width: 100%;
+    height: auto;
+  }
+
+  .left img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .right {
+    padding: 1rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+}
