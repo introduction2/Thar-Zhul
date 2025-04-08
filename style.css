@@ -17,7 +17,6 @@ body {
   height: 100vh;
 }
 
-/* Levá a pravá část rozdělená na půlku pro desktop */
 .left, .right {
   width: 50%;
   height: 100vh;
@@ -27,12 +26,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #111;
+  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(30,30,30,0.95)), 
+              linear-gradient(45deg, #00f0ff, #ff00f0, #00ff94);
+  background-blend-mode: overlay;
+  background-size: 400% 400%;
+  animation: holoPulse 15s ease infinite;
+  position: relative;
+  z-index: 1;
 }
 
 .left img {
   max-width: 90%;
   max-height: 90%;
+  z-index: 2;
+  position: relative;
+}
+
+@keyframes holoPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .right {
@@ -49,7 +62,6 @@ p {
   margin-bottom: 2rem;
 }
 
-/* --- MEDIA QUERY pro mobilní zařízení --- */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
