@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Postava a LORE</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="intro">
-  <video src="https://github.com/introduction2/Thar-Zhul/raw/refs/heads/main/Animace%20-%20uvod%20postav.mp4" autoplay muted playsinline></video>
-</div>
-  <div class="container">
+
+  <!-- Overlay s tlačítkem VSTUP -->
+  <div class="overlay" id="overlay">
+    <button id="enterBtn">VSTUP</button>
+  </div>
+
+  <!-- Intro video -->
+  <div class="intro" id="intro">
+    <video id="introVideo" src="https://github.com/introduction2/Thar-Zhul/raw/refs/heads/main/Animace%20-%20uvod%20postav.mp4" playsinline></video>
+  </div>
+
+  <!-- Hlavní obsah stránky -->
+  <div class="container hidden" id="mainContent">
     <div class="left">
-      <img src="nDRlTTUyll7Q0DKANmFw--0--fm6xa.jpeg" alt="Postava">
+      <img src="nDRlTTUyll7Q0DKANmFw--0--fm6xa.jpeg" alt="Postava" />
     </div>
+    <div class="right">
+      <!-- Hvězdy -->
     <div class="right">
     <div class="star"></div>
     <div class="star"></div>
@@ -55,6 +66,30 @@
       <p>Nepodává si ruku, protože jeho dotek zanechává stopy ohně.</p>
       <p>Jeho kladivo má vlastní vědomí a občas odmítne poslouchat slabší bytosti.</p>
     </div>
+  </div>
+  
+    <script>
+    const enterBtn = document.getElementById("enterBtn");
+    const overlay = document.getElementById("overlay");
+    const intro = document.getElementById("intro");
+    const video = document.getElementById("introVideo");
+    const mainContent = document.getElementById("mainContent");
+
+    enterBtn.addEventListener("click", () => {
+      overlay.style.display = "none";
+      intro.style.display = "block";
+      video.muted = false; // povolíme zvuk
+      video.play();
+
+      setTimeout(() => {
+        intro.classList.add("fade-out");
+        setTimeout(() => {
+          intro.style.display = "none";
+          mainContent.classList.remove("hidden");
+        }, 1000);
+      }, 3000);
+    });
+  </script>
   
 </body>
 </html>
