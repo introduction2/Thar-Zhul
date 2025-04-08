@@ -1,140 +1,94 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Postava a LORE</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 
-body {
-  font-family: 'Spectral', serif;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+  <!-- Overlay s tlačítkem VSTUP -->
+  <div class="overlay" id="overlay">
+    <button id="enterBtn">VSTUP</button>
+  </div>
 
-.container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-}
+  <!-- Intro video -->
+  <div class="intro" id="intro">
+    <video id="introVideo" src="https://github.com/introduction2/Thar-Zhul/raw/refs/heads/main/Animace%20-%20uvod%20postav.mp4" playsinline></video>
+  </div>
 
-.left, .right {
-  width: 50%;
-  height: 100vh;
-}
+  <!-- Hlavní obsah stránky -->
+  <div class="container hidden" id="mainContent">
+    <div class="left">
+      <img src="nDRlTTUyll7Q0DKANmFw--0--fm6xa.jpeg" alt="Postava" />
+    </div>
+    <div class="right">
+    <div class="right">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
 
-.left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(30,30,30,0.95)), 
-              linear-gradient(45deg, #00f0ff, #ff00f0, #00ff94);
-  background-blend-mode: overlay;
-  background-size: 400% 400%;
-  animation: holoPulse 15s ease infinite;
-  position: relative;
-  z-index: 1;
-}
+      <h1><p>Thar’Zhul</p></h1>
+      <p>Mistrovský Kovář Planety Zor’Kar</p>
 
-.left img {
-  max-width: 90%;
-  max-height: 90%;
-  z-index: 2;
-  position: relative;
-}
+      <p><strong>LORE</strong></p>
+      <p>Thar’Zhul je legendární kovář z planety Zor’Kar, jehož jméno je vyryto v runách nejmocnějších zbraní. Po staletí tvaroval mystický Titanit, kov pevnější než jakákoli známá látka, a dodával bojovníkům nástroje schopné prorazit i dimenzionální bariéry. Ve své kovárně hluboko v jeskyních temného pohoří ukovával Meče osudu, které předurčují vítěze bitev ještě předtím, než jsou svedeny.</p>
+      <p>Není jen řemeslníkem – Thar’Zhul je strážcem rovnováhy. Své výtvory poskytne jen těm, kdo prokáží sílu ducha a čistotu úmyslu. Ti, kdo se pokusili ukrást jeho zbraně, se proměnili v sochy z popela, odsouzené na věčnost strážit jeho dílnu.</p>
 
-@keyframes holoPulse {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+      <h2>Schopnosti</h2>
+      <p><span class="highlight">Plamen Zor’Kar (Síla 9/10)</span> – Dokáže rozpálit jakýkoli kov na bod, kdy se mění jeho vlastnosti. S jeho ohněm lze ukovat i zbraně schopné řezat realitu.</p>
+      <p><span class="highlight">Runový Kladivořez (Odolnost 10/10)</span> – Jeho magické kladivo, vyleptané pradávnými runami, dokáže nejen tvarovat kov, ale i ničit zaklínadla a rozbíjet magické bariéry.</p>
+      <p><span class="highlight">Ukovač Duší (Moudrost 8/10)</span> – Schopnost vkládat esenci válečníků do zbraní, což jim dává vlastní vědomí a sílu.</p>
+      <p><span class="highlight">Nezničitelná Kůže (Obrana 7/10)</span> – Díky neustálému vystavení extrémním teplotám se jeho kůže stala tvrdou jako kámen, schopnou odolat i přímým úderům energetických zbraní.</p>
+      <p><span class="highlight">Vize Kovárny (Vhled 6/10)</span> – Vidí slabiny ve zbraních i v brnění protivníků.</p>
 
-.right {
-  padding: 2rem;
-  background: radial-gradient(ellipse at bottom, #0a0a0a 0%, #000000 100%);
-  background-color: #080808;
-  background-image: 
-    url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* hvězdičkové pozadí */
-  background-repeat: repeat;
-  background-size: contain;
-  color: #ffffff;
-  overflow-y: auto;
-  position: relative;
-  z-index: 1;
-}
+      <h2>Zvláštnosti</h2>
+      <p>Nosí rune-inscribed zástěru, která mu dává odolnost vůči magii.</p>
+      <p>Nepodává si ruku, protože jeho dotek zanechává stopy ohně.</p>
+      <p>Jeho kladivo má vlastní vědomí a občas odmítne poslouchat slabší bytosti.</p>
+    </div>
+  </div>
+  
+    <script>
+    const enterBtn = document.getElementById("enterBtn");
+    const overlay = document.getElementById("overlay");
+    const intro = document.getElementById("intro");
+    const video = document.getElementById("introVideo");
+    const mainContent = document.getElementById("mainContent");
 
-/* Jednotlivé hvězdičky */
-.star {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background-color: white;
-  border-radius: 50%;
-  opacity: 0;
-  animation: blink 5s infinite;
-  z-index: 0;
-  pointer-events: none;
-}
+    enterBtn.addEventListener("click", () => {
+      overlay.style.display = "none";
+      intro.style.display = "block";
+      video.muted = false; // povolíme zvuk
+      video.play();
 
-/* Blikání s náhodným zpožděním */
-.star:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
-.star:nth-child(2) { top: 30%; left: 70%; animation-delay: 1.5s; }
-.star:nth-child(3) { top: 60%; left: 40%; animation-delay: 2.7s; }
-.star:nth-child(4) { top: 80%; left: 15%; animation-delay: 3.2s; }
-.star:nth-child(5) { top: 50%; left: 85%; animation-delay: 4.1s; }
-.star:nth-child(6) { top: 10%; left: 20%; animation-delay: 0s; }
-.star:nth-child(7) { top: 30%; left: 70%; animation-delay: 1.5s; }
-.star:nth-child(8) { top: 60%; left: 40%; animation-delay: 2.7s; }
-.star:nth-child(9) { top: 80%; left: 15%; animation-delay: 3.2s; }
-.star:nth-child(10) { top: 50%; left: 85%; animation-delay: 4.1s; }
-.star:nth-child(11) { top: 10%; left: 20%; animation-delay: 0s; }
-.star:nth-child(12) { top: 30%; left: 70%; animation-delay: 1.5s; }
-.star:nth-child(13) { top: 60%; left: 40%; animation-delay: 2.7s; }
-.star:nth-child(14) { top: 80%; left: 15%; animation-delay: 3.2s; }
-.star:nth-child(15) { top: 50%; left: 85%; animation-delay: 4.1s; }
-.star:nth-child(16) { top: 10%; left: 20%; animation-delay: 0s; }
-.star:nth-child(17) { top: 30%; left: 70%; animation-delay: 1.5s; }
-.star:nth-child(18) { top: 60%; left: 40%; animation-delay: 2.7s; }
-.star:nth-child(19) { top: 80%; left: 15%; animation-delay: 3.2s; }
-.star:nth-child(20) { top: 50%; left: 85%; animation-delay: 4.1s; }
-
-@keyframes blink {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 0.8; }
-  30% { opacity: 0.7; }
-  60% { opacity: 0.8; }
-  80% { opacity: 0.6; }
-}
-
-.highlight {
-  color: #3498db;
-}
-
-p {
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .left, .right {
-    width: 100%;
-    height: auto;
-  }
-
-  .left img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .right {
-    padding: 1rem;
-  }
-
-  p {
-    margin-bottom: 1.5rem;
-  }
-}
+      setTimeout(() => {
+        intro.classList.add("fade-out");
+        setTimeout(() => {
+          intro.style.display = "none";
+          mainContent.classList.remove("hidden");
+        }, 1000);
+      }, 3000);
+    });
+  </script>
+  
+</body>
+</html>
