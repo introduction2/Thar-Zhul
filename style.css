@@ -51,6 +51,7 @@ body {
 .right {
   padding: 2rem;
   background: radial-gradient(ellipse at bottom, #0a0a0a 0%, #000000 100%);
+  background-color: #080808;
   background-image: 
     url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* hvězdičkové pozadí */
   background-repeat: repeat;
