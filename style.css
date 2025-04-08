@@ -55,7 +55,7 @@ body {
     url('https://www.transparenttextures.com/patterns/stardust.png'); /* hvězdičkové pozadí */
   background-repeat: repeat;
   background-size: contain;
-  color: #ffffff;
+  color: #000000;
   overflow-y: auto;
 }
 
