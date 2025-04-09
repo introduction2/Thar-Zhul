@@ -31,6 +31,21 @@
       align-items: center;
     }
 
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    
+    .entry-screen button {
+      position: relative;
+      z-index: 1;
+    }
+    
     .entry-screen button {
       font-size: 2rem;
       padding: 1rem 2rem;
@@ -181,6 +196,9 @@
 
   <!-- Vstupní obrazovka -->
   <div class="entry-screen">
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="tvuj-soubor.mp4" type="video/mp4">
+  </video>
     <button id="enterBtn">VSTUP</button>
     
   </div>
