@@ -221,7 +221,7 @@
       </div>
       
       <form id="claimForm">
-  <input type="hidden" name="postava" value="Ro'Xazeel">
+  <input type="hidden" name="postava" value="Thar´Zul">
   <label for="email">Zadej svůj e-mail (pro odemčení lore):</label><br>
   <input type="email" name="email" required><br><br>
   <button type="submit">Zapsat do sbírky</button>
@@ -270,5 +270,32 @@
       }, 3000);
     });
   </script>
+  
+  <script>
+document.getElementById("claimForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  // Logování pro ověření, co je odesíláno
+  formData.forEach((value, key) => {
+    console.log(key + ": " + value);  // Logování hodnoty každého pole
+  });
+
+  fetch("https://script.google.com/macros/s/AKfycbzO0IC7kzWsC-uac-_URaa6js5s3rjDOaG-Y88s5AU4TsNlVYEHVrilmEzMWzIjGIar/exec", {
+    method: "POST",
+    body: formData,
+    mode: 'no-cors' // Tato změna obejde CORS, ale nedostaneš zpět odpověď serveru
+  })
+  .then(() => {
+    // Odpověď nebude dostupná, ale můžeme stále informovat uživatele
+    document.getElementById("result").textContent = "Postava zapsána!";
+  })
+  .catch(() => {
+    document.getElementById("result").textContent = "Nastala chyba.";
+  });
+});
+</script>
+  
 </body>
 </html>
