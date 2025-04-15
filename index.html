@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thar'Zhul - LORE</title>
+  <title>Thar-Zul - LORE</title>
   <style>
     * {
       margin: 0;
@@ -198,7 +198,7 @@
   <!-- Vstupní obrazovka -->
   <div class="entry-screen">
   <video autoplay muted loop playsinline class="background-video">
-    <source src="https://github.com/introduction2/Thar-Zhul/raw/refs/heads/main/Video.mp4" type="video/mp4">
+    <source src="Video.mp4" type="video/mp4">
   </video>
     <button id="enterBtn">VSTUP</button>
     
@@ -206,28 +206,31 @@
 
   <!-- Úvodní animace -->
   <div class="intro" id="intro">
-    <video id="introVideo" src="https://github.com/introduction2/Thar-Zhul/raw/refs/heads/main/Animace%20-%20uvod%20postav.mp4" playsinline></video>
+    <video id="introVideo" src="https://github.com/introduction2/Thar-Nek/raw/refs/heads/main/Animace%20-%20uvod%20postav.mp4" playsinline></video>
   </div>
 
   <!-- Hlavní obsah -->
   <div class="main-content" id="mainContent">
     <div class="left">
-      <img src="nDRlTTUyll7Q0DKANmFw--0--fm6xa.jpeg" alt="Postava">
+      <img src="https://github.com/introduction2/Thar-Zhul/blob/9890c211fc1dd03e4b6d9a229190877c5b5226a0/TharZul.jpg"> <alt="Postava">
     </div>
-    <div class="right">
-      <div class="stars">
-        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-      </div>
-      
+
 <form id="claimForm">
-  <input type="hidden" name="postava" value="Thar´Zul">
+  <input type="hidden" name="postava" value="Thar´Zhul">
   <label for="email">Zadej svůj e-mail (pro odemčení lore):</label><br>
   <input type="email" name="email" required><br><br>
   <button type="submit">Zapsat do sbírky</button>
 </form>
 
 <div id="result"></div>
+    
+<!-- Výpis výsledku -->
+<div id="result"></div>
+      <div class="right">
+      <div class="stars">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
 
       <h1>Thar’Zhul</h1>
       <p><strong>Mistrovský Kovář Planety Zor’Kar</strong></p>
@@ -242,8 +245,9 @@
       <p><span class="highlight">Ukovač Duší (Moudrost 8/10):</span> Vkládá esenci válečníků do zbraní.</p>
       <p><span class="highlight">Nezničitelná Kůže (Obrana 7/10):</span> Odolná vůči energetickým útokům.</p>
       <p><span class="highlight">Vize Kovárny (Vhled 6/10):</span> Vidí slabiny v zbraních i nepřátelích.</p>
+      
 
-      <h2>Zvláštnosti</h2>
+       <h2>Zvláštnosti</h2>
       <p>Nosí rune-inscribed zástěru, která jej chrání před magií. Jeho kladivo má vědomí a neuposlechne slabé bytosti.</p>
     </div>
   </div>
@@ -270,8 +274,7 @@
       }, 3000);
     });
   </script>
-  
- <script>
+<script>
 document.getElementById("claimForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -296,6 +299,8 @@ document.getElementById("claimForm").addEventListener("submit", function(e) {
   });
 });
 </script>
+
+
 
   
 </body>
